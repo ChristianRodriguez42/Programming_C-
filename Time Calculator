@@ -1,0 +1,80 @@
+/* Create a program that asks the user to enter a number of seconds.
+
+1. There are 86400 seconds in a day. If the number of seconds entered 
+by the user is greater than or equal to 86400, the program should display 
+the number of days in that many seconds.
+
+2. There are 3600 seconds in an hour. If the number of seconds entered 
+by the user is less than 86400 but is greater than or equal to 3600, 
+the program should display the number of hours in that many seconds.
+
+3. There are 60 seconds in a minute. If the number of seconds entered 
+by the user is less than 3600 but is greater than or equal to 60, the 
+program should display the number of minutes in that many seconds. */
+
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+  int total, day, hour, minute, second;
+  cout << "Input the number of seconds: " << endl;
+  cin >> total;
+
+  if (total <= 0) {
+    cout << "Invalid input!" << endl;
+  }
+
+  day = total / 86400;
+  total = total - (day * 86400);
+
+  hour = total / 3600;
+  total = total - (hour * 3600);
+
+  minute = total / 60;
+  total = total - (minute * 60);
+
+  second = total;
+  
+  if (day > 0) {
+    cout << day;
+    if (day == 1) {
+      cout << " Day" << endl;
+      }
+      else {
+        cout << " Days" << endl;
+        }
+  }
+
+  if (hour > 0) {
+    cout << hour;
+    if (hour == 1) {
+      cout << " Hour" << endl;
+      }
+      else {
+        cout << " Hours" << endl;
+        }
+  }
+
+  if (minute > 0) {
+    cout << minute;
+    if (minute == 1) {
+      cout << " Minute" << endl;
+      }
+      else {
+        cout << " Minutes" << endl;
+        }
+  }
+  
+  if (second > 0) {
+    cout << second;
+    if (second == 1) {
+      cout << " Second" << endl;
+      }
+      else {
+        cout << " Seconds" << endl;
+        }
+  }
+  return 0;
+  
+}
